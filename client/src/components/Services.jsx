@@ -50,36 +50,63 @@ const Services = () => {
 
                 <div className="grid grid-3 gap-4">
                     {services.map((service, index) => (
-                        <div
+                        <Link
                             key={index}
-                            className={`card ${isVisible ? 'animate-fade-in-up' : ''}`}
-                            style={{
-                                animationDelay: `${index * 150}ms`,
-                                display: 'flex',
-                                flexDirection: 'column',
-                            }}
+                            to="/services"
+                            style={{ textDecoration: 'none', color: 'inherit' }}
                         >
-                            <h3>{service.icon} {service.title}</h3>
+                            <div
+                                className={`card ${isVisible ? 'animate-fade-in-up' : ''}`}
+                                style={{
+                                    animationDelay: `${index * 150}ms`,
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    height: '100%',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.3s var(--ease)',
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-8px)';
+                                    e.currentTarget.style.boxShadow = '0 20px 40px -20px rgba(96, 165, 250, 0.3)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-5px)';
+                                    e.currentTarget.style.boxShadow = '0 20px 40px -20px rgba(0, 0, 0, 0.5)';
+                                }}
+                            >
+                                <h3>{service.icon} {service.title}</h3>
 
-                            <div style={{
-                                fontSize: '2rem',
-                                fontWeight: 'bold',
-                                color: 'var(--primary)',
-                                margin: '1rem 0',
-                            }}>
-                                {service.price}
+                                <div style={{
+                                    fontSize: '2rem',
+                                    fontWeight: 'bold',
+                                    color: 'var(--primary)',
+                                    margin: '1rem 0',
+                                }}>
+                                    {service.price}
+                                </div>
+
+                                <p style={{ margin: '0 0 1.5rem 0', flex: 1 }}>
+                                    {service.description}
+                                </p>
+
+                                <ul style={{ listStyle: 'none', color: 'var(--text-dim)' }}>
+                                    {service.features.map((feature, idx) => (
+                                        <li key={idx}>✓ {feature}</li>
+                                    ))}
+                                </ul>
+
+                                <div style={{
+                                    marginTop: '1.5rem',
+                                    paddingTop: '1rem',
+                                    borderTop: '1px solid rgba(255,255,255,0.1)',
+                                    color: 'var(--primary)',
+                                    fontSize: '0.9rem',
+                                    fontWeight: '600',
+                                }}>
+                                    Learn More →
+                                </div>
                             </div>
-
-                            <p style={{ margin: '0 0 1.5rem 0', flex: 1 }}>
-                                {service.description}
-                            </p>
-
-                            <ul style={{ listStyle: 'none', color: 'var(--text-dim)' }}>
-                                {service.features.map((feature, idx) => (
-                                    <li key={idx}>✓ {feature}</li>
-                                ))}
-                            </ul>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
