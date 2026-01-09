@@ -170,20 +170,24 @@ const ServicesPage = () => {
                                     border: pkg.highlighted ? '2px solid var(--primary)' : '1px solid rgba(255,255,255,0.05)',
                                     background: pkg.highlighted ? 'rgba(96, 165, 250, 0.05)' : 'var(--bg-card)',
                                     position: 'relative',
+                                    overflow: 'visible',
+                                    marginTop: pkg.highlighted ? '20px' : '0',
                                 }}
                             >
                                 {pkg.highlighted && (
                                     <div style={{
                                         position: 'absolute',
-                                        top: '-12px',
+                                        top: '-16px',
                                         left: '50%',
                                         transform: 'translateX(-50%)',
                                         background: 'var(--primary)',
                                         color: 'white',
-                                        padding: '4px 16px',
+                                        padding: '6px 20px',
                                         borderRadius: 'var(--radius-sm)',
                                         fontSize: '0.85rem',
                                         fontWeight: 'bold',
+                                        zIndex: 10,
+                                        boxShadow: '0 4px 10px rgba(96, 165, 250, 0.3)',
                                     }}>
                                         POPULAR
                                     </div>
