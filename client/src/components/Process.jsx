@@ -48,30 +48,31 @@ const Process = () => {
                             style={{
                                 animationDelay: `${index * 150}ms`,
                                 position: 'relative',
-                                overflow: 'visible',
+                                overflow: 'hidden',
                             }}
                         >
                             <div style={{
                                 fontSize: '4rem',
                                 position: 'absolute',
-                                top: '-20px',
-                                right: '20px',
-                                opacity: 0.1,
+                                top: '10px',
+                                right: '10px',
+                                opacity: 0.08,
                                 fontWeight: 'bold',
                                 color: 'var(--primary)',
+                                lineHeight: 1,
                             }}>
                                 {step.number}
                             </div>
 
-                            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+                            <div style={{ fontSize: '3rem', marginBottom: '1rem', position: 'relative', zIndex: 1 }}>
                                 {step.icon}
                             </div>
 
-                            <h3 style={{ marginBottom: '1rem', color: 'var(--primary)' }}>
+                            <h3 style={{ marginBottom: '1rem', color: 'var(--primary)', position: 'relative', zIndex: 1 }}>
                                 {step.title}
                             </h3>
 
-                            <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
+                            <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, position: 'relative', zIndex: 1 }}>
                                 {step.description}
                             </p>
                         </div>
