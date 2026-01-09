@@ -3,7 +3,53 @@ import FAQ from '../components/FAQ';
 import CTABanner from '../components/CTABanner';
 
 const ServicesPage = () => {
+    const [servicesRef, servicesVisible] = useScrollAnimation({ threshold: 0.2 });
     const [pricingRef, pricingVisible] = useScrollAnimation({ threshold: 0.3 });
+
+    const services = [
+        {
+            icon: '🚀',
+            title: 'New Site Build',
+            description: 'A complete, custom-designed website built from scratch using the latest tech (React/Vite). Fast, secure, and SEO-ready.',
+            features: [
+                'Custom Design System',
+                'Mobile Responsive Design',
+                'SEO Foundation & Optimization',
+                'Performance Optimization',
+                'Analytics Integration',
+                'Content Management',
+            ],
+            price: 'From $3,000',
+        },
+        {
+            icon: '⚡',
+            title: 'Performance Fix',
+            description: 'Already have a site? We analyze it, strip out the bloat, optimize images, and make it fly. Better Google rankings guaranteed.',
+            features: [
+                'Speed Optimization',
+                'Core Web Vitals Fix',
+                'Image & Asset Optimization',
+                'Code Cleanup & Refactoring',
+                'Hosting Migration',
+                'Performance Monitoring',
+            ],
+            price: 'From $1,500',
+        },
+        {
+            icon: '📈',
+            title: 'Conversion Optimization',
+            description: 'Tweaking your layout, buttons, and copy to get more phone calls and form submissions from existing traffic.',
+            features: [
+                'UI/UX Improvements',
+                'A/B Testing Strategy',
+                'Call-to-Action Optimization',
+                'Form Optimization',
+                'User Flow Analysis',
+                'Conversion Tracking',
+            ],
+            price: 'From $2,000',
+        },
+    ];
 
     const packages = [
         {
@@ -63,8 +109,44 @@ const ServicesPage = () => {
                         margin: '2rem auto',
                         color: 'var(--text-muted)'
                     }}>
-                        Choose the perfect package for your business needs. Transparent pricing, no hidden fees.
+                        Everything you need to dominate your niche online. From new builds to performance fixes, we've got you covered.
                     </p>
+                </div>
+            </section>
+
+            {/* Services Grid */}
+            <section className="section section-light" ref={servicesRef}>
+                <div className="container">
+                    <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+                        {services.map((service, index) => (
+                            <div
+                                key={index}
+                                className={`card ${servicesVisible ? 'animate-fade-in-up' : ''}`}
+                                style={{ animationDelay: `${index * 150}ms`, height: '100%', display: 'flex', flexDirection: 'column' }}
+                            >
+                                <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>{service.icon}</div>
+                                <h3 style={{ marginBottom: '1rem', color: 'var(--primary)' }}>{service.title}</h3>
+                                <p style={{ marginBottom: '1.5rem', color: 'var(--text-muted)', flex: 1 }}>
+                                    {service.description}
+                                </p>
+                                <ul style={{ listStyle: 'none', marginBottom: '1.5rem' }}>
+                                    {service.features.map((feature, idx) => (
+                                        <li key={idx} style={{ color: 'var(--text-dim)', marginBottom: '0.5rem' }}>
+                                            ✓ {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <div style={{
+                                    fontSize: '1.5rem',
+                                    fontWeight: 'bold',
+                                    color: 'var(--primary)',
+                                    marginTop: 'auto',
+                                }}>
+                                    {service.price}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
