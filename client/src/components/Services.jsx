@@ -8,7 +8,7 @@ const Services = () => {
         {
             icon: '🚀',
             title: 'New Site Build',
-            price: 'From $3,000',
+            price: '$599',
             description: 'A complete, custom-designed website built from scratch using the latest tech (React/Vite). Fast, secure, and SEO-ready.',
             features: [
                 'Custom Design System',
@@ -19,7 +19,7 @@ const Services = () => {
         {
             icon: '⚡',
             title: 'Performance Fix',
-            price: 'From $1,500',
+            price: '$129',
             description: 'Already have a site? We analyze it, strip out the bloat, optimize images, and make it fly. Better Google rankings guaranteed.',
             features: [
                 'Speed Optimization',
@@ -30,7 +30,7 @@ const Services = () => {
         {
             icon: '📈',
             title: 'Conversion Optimization',
-            price: 'From $2,000',
+            price: '$99',
             description: 'Tweaking your layout, buttons, and copy to get more phone calls and form submissions from existing traffic.',
             features: [
                 'UI/UX Improvements',

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import FAQ from '../components/FAQ';
 import CTABanner from '../components/CTABanner';
@@ -19,7 +20,7 @@ const ServicesPage = () => {
                 'Analytics Integration',
                 'Content Management',
             ],
-            price: 'From $3,000',
+            price: '$599',
         },
         {
             icon: '⚡',
@@ -33,7 +34,7 @@ const ServicesPage = () => {
                 'Hosting Migration',
                 'Performance Monitoring',
             ],
-            price: 'From $1,500',
+            price: '$129',
         },
         {
             icon: '📈',
@@ -47,27 +48,29 @@ const ServicesPage = () => {
                 'User Flow Analysis',
                 'Conversion Tracking',
             ],
-            price: 'From $2,000',
+            price: '$99',
         },
     ];
 
     const packages = [
         {
             name: 'Starter',
-            price: '$2,500',
+            price: '$599',
             description: 'Perfect for small businesses just getting started online',
             features: [
                 '5-page website',
                 'Mobile responsive',
                 'Basic SEO setup',
                 'Contact form',
+                '1 year FREE hosting',
+                'FREE domain name (non-premium & selected TLD)',
                 '1 month support',
             ],
             highlighted: false,
         },
         {
             name: 'Professional',
-            price: '$5,000',
+            price: '$1,099',
             description: 'Ideal for growing businesses that need more features',
             features: [
                 '10-page website',
@@ -75,6 +78,8 @@ const ServicesPage = () => {
                 'Blog/CMS integration',
                 'Analytics dashboard',
                 'E-commerce ready',
+                '5 years FREE hosting',
+                'FREE domain name (non-premium & selected TLD)',
                 '3 months support',
             ],
             highlighted: true,
@@ -209,9 +214,9 @@ const ServicesPage = () => {
                                     ))}
                                 </ul>
 
-                                <button className="btn btn-primary" style={{ width: '100%' }}>
-                                    Get Started
-                                </button>
+                                <Link to="/contact" className="btn btn-primary" style={{ width: '100%', textDecoration: 'none' }}>
+                                    Start Your Project
+                                </Link>
                             </div>
                         ))}
                     </div>

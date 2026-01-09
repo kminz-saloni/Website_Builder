@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const CTABanner = ({
     title = "Ready to Transform Your Online Presence?",
     subtitle = "Stop losing customers to slow, broken websites. Let's build something that actually converts.",
-    buttonText = "Get Your Free Audit",
+    buttonText = "Start Your Project",
     buttonLink = "/contact"
 }) => {
     return (
