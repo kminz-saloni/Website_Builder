@@ -1,47 +1,82 @@
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import useCountUp from '../hooks/useCountUp';
 
 const Problem = () => {
     const [ref, isVisible] = useScrollAnimation({ threshold: 0.3 });
 
+    const problems = [
+        'load too slowly on mobile',
+        'confuse visitors',
+        'hide contact actions',
+        'look unreliable at first glance',
+    ];
+
     return (
         <section className="section section-light" ref={ref}>
-            <div className="container">
-                <div className="grid grid-2 gap-4 items-center">
-                    <div className={isVisible ? 'animate-fade-in-up' : ''}>
-                        <h2 style={{ marginBottom: '1.5rem' }}>Is Your Website <span className="text-gradient-primary">Leaking Money?</span></h2>
-                        <p style={{ marginBottom: '1rem' }}>
-                            Most business websites are pretty to look at but terrible at selling. They load slowly, look broken on mobile, and confuse visitors.
+            <div className="container" style={{ maxWidth: '900px' }}>
+                <div className="text-center" style={{ marginBottom: '3rem' }}>
+                    <h2 className={isVisible ? 'animate-fade-in-up' : ''}>
+                        Most websites don't <span className="text-gradient-primary">fail</span> — they quietly underperform
+                    </h2>
+                </div>
+
+                <div className={`card ${isVisible ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '150ms' }}>
+                    <p style={{
+                        fontSize: '1.1rem',
+                        marginBottom: '1.5rem',
+                        lineHeight: '1.8',
+                    }}>
+                        Many business websites:
+                    </p>
+
+                    <ul style={{
+                        listStyle: 'none',
+                        fontSize: '1.05rem',
+                        marginBottom: '2rem',
+                        lineHeight: '2',
+                    }}>
+                        {problems.map((problem, index) => (
+                            <li key={index} style={{ marginBottom: '0.5rem' }}>
+                                ❌ {problem}
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div style={{
+                        padding: '1.5rem',
+                        background: 'rgba(96, 165, 250, 0.1)',
+                        borderLeft: '3px solid var(--primary)',
+                        borderRadius: '4px',
+                        marginBottom: '1.5rem',
+                    }}>
+                        <p style={{
+                            fontSize: '1.2rem',
+                            fontWeight: 'bold',
+                            color: 'var(--primary)',
+                            marginBottom: '0.5rem',
+                        }}>
+                            The result?
                         </p>
-                        <p>
-                            <strong>The Result?</strong> You pay for ads, people click, wait 5 seconds, and leave. We fix that.
+                        <p style={{
+                            fontSize: '1.05rem',
+                            lineHeight: '1.7',
+                            margin: 0,
+                        }}>
+                            Visitors leave before they ever call or enquire.
                         </p>
                     </div>
-                    <div className="grid grid-2 gap-4">
-                        <StatCard value={53} suffix="%" label="Load time kills visits" isVisible={isVisible} delay={0} />
-                        <StatCard value={60} suffix="%" label="Traffic is mobile users" isVisible={isVisible} delay={100} />
-                        <StatCard value={0} suffix="%" label="Leads from broken form" isVisible={isVisible} delay={200} />
-                        <div className={`card text-center ${isVisible ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms' }}>
-                            <h3 className="text-gradient-primary">ROI</h3>
-                            <p>Maximize your ad spend</p>
-                        </div>
-                    </div>
+
+                    <p style={{
+                        fontSize: '1.15rem',
+                        fontWeight: '600',
+                        color: 'var(--primary)',
+                        textAlign: 'center',
+                    }}>
+                        We help fix that.
+                    </p>
                 </div>
             </div>
         </section>
     );
 };
 
-const StatCard = ({ value, suffix, label, isVisible, delay }) => {
-    const count = useCountUp(value, 2000, isVisible);
-
-    return (
-        <div className={`card text-center ${isVisible ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: `${delay}ms` }}>
-            <h3 className="text-gradient-primary">{count}{suffix}</h3>
-            <p>{label}</p>
-        </div>
-    );
-};
-
 export default Problem;
-

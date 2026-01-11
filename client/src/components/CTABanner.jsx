@@ -1,63 +1,41 @@
-import { Link } from 'react-router-dom';
-
-const CTABanner = ({
-    title = "Ready to Transform Your Online Presence?",
-    subtitle = "Stop losing customers to slow, broken websites. Let's build something that actually converts.",
-    buttonText = "Start Your Project",
-    buttonLink = "/contact"
-}) => {
+const CTABanner = () => {
     return (
-        <section className="section" style={{
-            background: 'linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(167, 139, 250, 0.2))',
-            position: 'relative',
-            overflow: 'hidden',
+        <section className="section section-light" style={{
+            paddingTop: '5rem',
+            paddingBottom: '5rem',
+            textAlign: 'center',
         }}>
-            {/* Animated background elements */}
-            <div style={{
-                position: 'absolute',
-                top: '-50%',
-                right: '-10%',
-                width: '500px',
-                height: '500px',
-                background: 'radial-gradient(circle, rgba(96, 165, 250, 0.15), transparent)',
-                borderRadius: '50%',
-                filter: 'blur(60px)',
-            }} className="animate-float" />
-
-            <div style={{
-                position: 'absolute',
-                bottom: '-50%',
-                left: '-10%',
-                width: '500px',
-                height: '500px',
-                background: 'radial-gradient(circle, rgba(167, 139, 250, 0.15), transparent)',
-                borderRadius: '50%',
-                filter: 'blur(60px)',
-            }} className="animate-float" />
-
-            <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                <div className="text-center" style={{ maxWidth: '700px', margin: '0 auto' }}>
-                    <h2 className="animate-fade-in-up" style={{ marginBottom: '1rem' }}>
-                        {title}
-                    </h2>
-                    <p className="animate-fade-in-up delay-100" style={{
-                        fontSize: '1.2rem',
-                        color: 'var(--text-muted)',
-                        marginBottom: '2rem'
-                    }}>
-                        {subtitle}
-                    </p>
-                    <Link
-                        to={buttonLink}
-                        className="btn btn-primary btn-pulse animate-fade-in-up delay-200"
-                        style={{
-                            fontSize: '1.1rem',
-                            padding: '16px 32px',
-                        }}
-                    >
-                        {buttonText}
-                    </Link>
-                </div>
+            <div className="container" style={{ maxWidth: '700px' }}>
+                <h2 className="animate-fade-in-up" style={{
+                    fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+                    marginBottom: '2rem',
+                }}>
+                    Not sure if your website is <span className="text-gradient-primary">helping or hurting?</span>
+                </h2>
+                <p className="animate-fade-in-up delay-100" style={{
+                    fontSize: '1.1rem',
+                    color: 'var(--text-muted)',
+                    marginBottom: '2.5rem',
+                    lineHeight: '1.7',
+                }}>
+                    We'll review it honestly and tell you where you stand.
+                </p>
+                <a
+                    href="https://wa.me/919811674377?text=Hi!%20I'd%20like%20a%20free%20website%20review"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary btn-pulse animate-fade-in-up delay-200"
+                    style={{
+                        fontSize: '1.1rem',
+                        padding: '1rem 2.5rem',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        textDecoration: 'none',
+                    }}
+                >
+                    📞 Request a Free Website Review
+                </a>
             </div>
         </section>
     );

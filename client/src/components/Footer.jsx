@@ -7,7 +7,6 @@ const Footer = () => {
     const footerLinks = {
         company: [
             { label: 'About Us', path: '/about' },
-            { label: 'Portfolio', path: '/portfolio' },
             { label: 'Services', path: '/services' },
         ],
         services: [
@@ -17,6 +16,7 @@ const Footer = () => {
         ],
         contact: [
             { label: 'Get in Touch', path: '/contact' },
+            { label: '+91 98116 74377', href: 'https://wa.me/919811674377' },
             { label: 'webcreststudios@gmail.com', href: 'mailto:webcreststudios@gmail.com' },
         ],
     };

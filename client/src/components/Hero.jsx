@@ -1,17 +1,4 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import useTypingEffect from '../hooks/useTypingEffect';
-
 const Hero = () => {
-  const [showTyping, setShowTyping] = useState(false);
-  const typedText = useTypingEffect('Bad Websites', 80, showTyping);
-
-  useEffect(() => {
-    // Start typing animation after component mounts
-    const timer = setTimeout(() => setShowTyping(true), 500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section className="section section-dark" style={{
       paddingTop: '8rem',
@@ -44,31 +31,62 @@ const Hero = () => {
       }} className="animate-float delay-200" />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <h1 className="text-gradient animate-fade-in-down">
-          Stop Losing Clients to <br />
-          <span className="text-gradient-primary">
-            {typedText}
-            {showTyping && typedText.length < 12 && <span className="typing-cursor"></span>}
-          </span>
+        <h1 className="text-gradient animate-fade-in-down" style={{
+          fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+          lineHeight: '1.2',
+          marginBottom: '2rem',
+        }}>
+          Websites built to help businesses get <span className="text-gradient-primary">more enquiries</span> — not just look good
         </h1>
 
         <p className="animate-fade-in-up delay-200" style={{
           fontSize: '1.25rem',
-          maxWidth: '600px',
-          margin: '2rem auto',
-          color: 'var(--text-muted)'
+          maxWidth: '700px',
+          margin: '0 auto 1.5rem',
+          color: 'var(--text-muted)',
+          lineHeight: '1.7',
         }}>
-          We audit, fix, and build high-performance websites that turn visitors into paying customers. Don't let a slow site kill your business.
+          WebCrest Studio helps service-based businesses fix slow, confusing websites that cost them real customers.
         </p>
 
-        <div className="flex justify-center gap-2 animate-fade-in-up delay-300">
-          <Link to="/contact" className="btn btn-primary">Get Free Site Audit</Link>
-          <Link to="/services" className="btn btn-outline">View Our Services</Link>
+        <p className="animate-fade-in-up delay-300" style={{
+          fontSize: '1.15rem',
+          maxWidth: '650px',
+          margin: '0 auto 3rem',
+          color: 'var(--text-muted)',
+          lineHeight: '1.7',
+        }}>
+          We audit, rebuild, and simplify websites so visitors understand what you offer — and take action.
+        </p>
+
+        <div className="animate-fade-in-up delay-400" style={{ marginBottom: '1.5rem' }}>
+          <a
+            href="https://wa.me/919811674377?text=Hi!%20I'd%20like%20a%20free%20website%20review"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+            style={{
+              fontSize: '1.1rem',
+              padding: '1rem 2.5rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              textDecoration: 'none',
+            }}
+          >
+            📞 Request a Free Website Review
+          </a>
         </div>
+
+        <p className="animate-fade-in-up delay-500" style={{
+          fontSize: '0.9rem',
+          color: 'var(--text-dim)',
+        }}>
+          No obligation · Clear feedback · Honest advice
+        </p>
       </div>
     </section>
   );
 };
 
 export default Hero;
-

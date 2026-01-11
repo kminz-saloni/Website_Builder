@@ -1,18 +1,20 @@
 import Hero from '../components/Hero';
-import Stats from '../components/Stats';
 import Problem from '../components/Problem';
-import Services from '../components/Services';
-import Testimonials from '../components/Testimonials';
+import WhatWeDo from '../components/WhatWeDo';
+import Industries from '../components/Industries';
+import HowWeWork from '../components/HowWeWork';
+import WhoThisIsFor from '../components/WhoThisIsFor';
 import CTABanner from '../components/CTABanner';
 
 const HomePage = () => {
     return (
         <>
             <Hero />
-            <Stats />
             <Problem />
-            <Services />
-            <Testimonials />
+            <WhatWeDo />
+            <Industries />
+            <HowWeWork />
+            <WhoThisIsFor />
             <CTABanner />
         </>
     );
