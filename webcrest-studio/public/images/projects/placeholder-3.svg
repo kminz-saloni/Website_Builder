@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#0B0B0B"/>
+  <rect x="40" y="40" width="1120" height="595" rx="24" fill="#111111" stroke="#22C55E" stroke-opacity="0.45"/>
+  <text x="80" y="120" fill="#22C55E" font-family="monospace" font-size="28">Experiment #003</text>
+  <text x="80" y="170" fill="#E5E5E5" font-family="monospace" font-size="40">Commerce Performance Rebuild</text>
+</svg>
