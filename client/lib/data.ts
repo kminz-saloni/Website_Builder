@@ -10,105 +10,107 @@ export const labStatus = {
 export const projects: ProjectCaseStudy[] = [
   {
     id: "001",
-    title: "Balloon Decoration Website",
-    shortDescription: "Conversion-focused business site with scheduling and quote workflows.",
-    goal: "Build a responsive lead-generation website that loads fast and converts local traffic.",
-    stack: ["Next.js", "Tailwind CSS", "Stripe", "Vercel"],
+    title: "Brother's Balloon Decoration",
+    shortDescription: "Premium balloon decor service booking platform for events and parties.",
+    goal: "Professionalize digital presence and capture high-intent local leads in Jaipur.",
+    stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
     status: "Completed",
     overview:
       "A brand-forward service site for a balloon decor company with strong local SEO and mobile-first booking flows.",
     problem:
       "The business relied on social DMs and had no structured funnel, causing slow response times and lost bookings.",
     solution:
-      "Engineered a modular booking funnel with clear CTAs, service-tier cards, and a quote capture form wired to automation.",
+      "Engineered a high-performance landing page with WhatsApp integration and category-specific decor galleries.",
     architecture: [
       "Next.js App Router for route-level performance",
-      "Reusable section components and typed content models",
-      "Serverless form relay and Stripe checkout links",
+      "Framer Motion for festive and interactive visual feel",
+      "Serverless WhatsApp lead routing",
       "Vercel edge deployment with image optimization"
     ],
-    screenshots: [{ src: "/images/projects/placeholder-1.svg", alt: "Balloon project dashboard preview" }],
+    screenshots: [{ src: "/images/projects/balloon_decor.png", alt: "Balloon decoration gallery and booking interface" }],
     outcome:
-      "Improved lead quality and faster turnaround on quote requests with a visibly stronger professional brand presence.",
-    liveUrl: "https://example.com",
+      "Increased professional brand authority and streamlined lead capture via automated WhatsApp redirection.",
+    liveUrl: "https://balloondecoration.in",
     githubUrl: "https://github.com"
   },
   {
     id: "002",
-    title: "ServiceOps Client Portal",
-    shortDescription: "Internal dashboard for service teams to track tasks, clients, and SLA states.",
-    goal: "Unify task execution and client communication in one secure, responsive dashboard.",
-    stack: ["TypeScript", "React", "Supabase", "Framer Motion"],
+    title: "Plixi Instagram Growth",
+    shortDescription: "AI-powered social media growth engine for organic follower acquisition.",
+    goal: "Automate Instagram engagement and provide deep analytics for influencers and brands.",
+    stack: ["React", "TypeScript", "AI Engine", "Tailwind CSS"],
     status: "Live",
     overview:
-      "An authenticated operations panel for small teams managing multi-stage projects and recurring support requests.",
+      "An advanced AI-powered service helping users gain real followers and engagement through organic automation.",
     problem:
-      "Client updates were fragmented across spreadsheets, emails, and chat which introduced delays and missed handoffs.",
+      "Manual engagement is unsustainable; and legacy bot-based growth risks account safety and brand reputation.",
     solution:
-      "Created a centralized workflow board with SLA badges, status automation, and role-based project views.",
+      "Patented AI growth technology that mimics organic human behavior and provides comprehensive growth analytics.",
     architecture: [
-      "Component-driven dashboard shell",
-      "Realtime datastore for task states",
-      "Type-safe service layer with strict models",
-      "Animated UI feedback for state transitions"
+      "Real-time analytics dashboard with deep insights",
+      "AI-driven engagement engine with safety guardrails",
+      "Secure multi-account management layer",
+      "Responsive Next.js frontend with enterprise-grade security"
     ],
-    screenshots: [{ src: "/images/projects/placeholder-2.svg", alt: "ServiceOps project board screenshot" }],
+    screenshots: [{ src: "/images/projects/plixi_growth.png", alt: "Plixi AI growth dashboard preview" }],
     outcome:
-      "Reduced coordination overhead and made progress tracking transparent for both operators and clients.",
-    liveUrl: "https://example.com",
+      "Helped thousands of accounts scale their organic reach with 100% TOS-compliant automation.",
+    liveUrl: "https://plixi.com",
     githubUrl: "https://github.com"
   },
   {
     id: "003",
-    title: "Commerce Performance Rebuild",
-    shortDescription: "Speed-focused storefront rebuild with modern rendering and caching patterns.",
-    goal: "Improve Core Web Vitals while preserving catalog flexibility and CMS workflows.",
-    stack: ["Next.js", "Sanity", "Node", "Lighthouse CI"],
+    title: "Drain Doctor Service Hub",
+    shortDescription: "National emergency plumbing and drainage service infrastructure.",
+    goal: "Streamline emergency response and local engineer dispatch across the UK.",
+    stack: ["Next.js", "React", "Mapbox", "Lead Routing"],
     status: "Completed",
     overview:
-      "A headless commerce frontend re-architecture focused on loading speed, checkout continuity, and maintainability.",
+      "A national service portal for professional plumbing solutions, specializing in emergency repairs and drainage.",
     problem:
-      "Legacy templates produced high JS payloads and unstable layout shifts, hurting search visibility and conversions.",
+      "Managing regional dispatch and service consistency at a national scale for emergency plumbing.",
     solution:
-      "Shipped a componentized storefront with selective hydration, optimized image pipelines, and route-level splitting.",
+      "Geolocation-aware service hub with instant quote and urgent rescue booking workflows.",
     architecture: [
-      "Headless content integration",
-      "Server-rendered critical routes",
-      "Performance budgets in CI",
-      "Semantic SEO structure"
+      "Dynamic service area routing based on UK postcodes",
+      "Emergency service 'Rescue Engine' for immediate dispatch",
+      "Integrated customer review and accreditation system",
+      "High-availability infrastructure for 24/7 service access"
     ],
-    screenshots: [{ src: "/images/projects/placeholder-3.svg", alt: "Commerce rebuild metrics interface" }],
+    screenshots: [{ src: "/images/projects/drain_doctor.png", alt: "Drain Doctor service booking interface" }],
     outcome:
-      "Achieved large performance gains across mobile and desktop audits with cleaner release processes.",
-    liveUrl: "https://example.com",
+      "Drastically reduced response times and improved national coverage visibility for local engineers.",
+    liveUrl: "https://www.draindoctor.co.uk/plumbing",
     githubUrl: "https://github.com"
   },
   {
     id: "004",
-    title: "Automation Landing Lab",
-    shortDescription: "Experiment-driven micro-site network for rapid campaign validation.",
-    goal: "Test messaging, UI variants, and API-backed lead routing across niche funnels.",
-    stack: ["Next.js", "Tailwind CSS", "n8n", "Cloudflare"],
+    title: "Smile Dental Care Network",
+    shortDescription: "Patient management and booking system for UK dental clinics.",
+    goal: "Centralize practice management for 30+ locations while simplifying patient bookings.",
+    stack: ["Next.js", "Tailwind CSS", "Booking Engine", "Zod"],
     status: "In Progress",
     overview:
-      "A system for launching and measuring small campaign pages rapidly with shared analytics and workflow automation.",
+      "A comprehensive digital platform for one of the UK's leading groups of high-quality dental practices.",
     problem:
-      "Manual campaign launches were slow and difficult to compare across audiences and channels.",
+      "Fragmented patient booking systems and difficulty in managing multi-location service schedules.",
     solution:
-      "Designed a lab pipeline using reusable templates, event tracking presets, and auto-generated experiment IDs.",
+      "Integrated clinic locator, treatment record portal, and unified real-time appointment calendar.",
     architecture: [
-      "Template registry for quick deploys",
-      "API-first lead router",
-      "Feature-flag style variations",
-      "Unified analytics ingestion"
+      "Multi-tenant practice architecture supporting 30+ sites",
+      "Advanced appointment scheduling with emergency slot priority",
+      "Patient education portal and preventive care roadmap",
+      "NHS and Private service segmentation logic"
     ],
-    screenshots: [{ src: "/images/projects/placeholder-4.svg", alt: "Automation lab campaign console" }],
+    screenshots: [{ src: "/images/projects/smile_dental.png", alt: "Smile Dental clinic locator and booking portal" }],
     outcome:
-      "Now shipping campaign tests in hours instead of days with clearer signal on creative performance.",
-    liveUrl: "https://example.com",
+      "Improving patient experience and reducing administrative overhead for practice managers.",
+    liveUrl: "https://smile-dentalcare.co.uk/",
     githubUrl: "https://github.com"
   }
 ];
+
+
 
 export const experiments: Experiment[] = [
   {
