@@ -6,7 +6,8 @@ import { projects } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Production projects documented as engineering case studies from WEB CREST LAB."
+  description:
+    "Production projects documented as engineering case studies from WEB CREST LAB.",
 };
 
 export default function ProjectsPage() {

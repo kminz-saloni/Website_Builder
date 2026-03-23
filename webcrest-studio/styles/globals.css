@@ -2,12 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Design Tokens ─── */
 :root {
   color-scheme: dark;
+
+  --color-bg: #0b0b0b;
+  --color-surface: #111111;
+  --color-primary: #00e0ff;
+  --color-secondary: #7c3aed;
+  --color-accent: #22c55e;
+
+  --text-primary: #e5e5e5;
+  --text-muted: #9ca3af;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --glow-primary: 0 0 25px rgba(0, 224, 255, 0.35);
+  --glow-secondary: 0 0 25px rgba(124, 58, 237, 0.35);
+  --glow-accent: 0 0 25px rgba(34, 197, 94, 0.3);
+
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ─── Reset & Base ─── */
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -17,13 +43,36 @@ body {
 
 body {
   margin: 0;
-  background: #0b0b0b;
-  color: #e5e5e5;
+  background: var(--color-bg);
+  color: var(--text-primary);
 }
 
+/* ─── Selection ─── */
 ::selection {
   background: rgba(0, 224, 255, 0.3);
   color: #ffffff;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 224, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 224, 255, 0.4);
+}
+
+/* ─── Focus Visible ─── */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 @layer base {
@@ -41,8 +90,195 @@ body {
   }
 }
 
+/* ─── Utility Classes ─── */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass panel */
+  .glass-panel {
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Card surface */
+  .card-surface {
+    background: rgba(17, 17, 17, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: all 0.3s var(--transition-smooth);
+  }
+
+  .card-surface:hover {
+    border-color: rgba(0, 224, 255, 0.3);
+    box-shadow: 0 0 0 1px rgba(0, 224, 255, 0.15), 0 0 30px rgba(0, 224, 255, 0.1);
+  }
+
+  /* Glow border with animated gradient */
+  .glow-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glow-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      var(--glow-angle, 0deg),
+      var(--color-primary),
+      var(--color-secondary),
+      var(--color-primary)
+    );
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.4s var(--transition-smooth);
+    animation: gradient-rotate 4s linear infinite;
+  }
+
+  .glow-border:hover::before {
+    opacity: 1;
+  }
+
+  /* Noise overlay texture */
+  .noise-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  /* Pulsing status dot */
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: status-pulse 2s ease-in-out infinite;
+  }
+
+  .status-dot--online {
+    background: var(--color-accent);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  }
+
+  .status-dot--active {
+    background: var(--color-primary);
+    box-shadow: 0 0 8px rgba(0, 224, 255, 0.6);
+  }
+}
+
+/* ─── Keyframes ─── */
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.2);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(0, 224, 255, 0.5);
+  }
+}
+
+@keyframes gradient-rotate {
+  0% {
+    --glow-angle: 0deg;
+  }
+  100% {
+    --glow-angle: 360deg;
+  }
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(10px, -20px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-5px, -40px);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(15px, -25px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Register custom property for gradient animation */
+@property --glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }

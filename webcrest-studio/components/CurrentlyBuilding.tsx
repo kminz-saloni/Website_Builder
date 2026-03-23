@@ -1,4 +1,7 @@
+"use client";
+
 import { Bot, Gauge, Workflow } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { SectionHeading } from "@/components/SectionHeading";
 
@@ -6,40 +9,62 @@ const items = [
   {
     title: "AI Tools",
     icon: Bot,
-    description: "Assistant-style interfaces and typed AI workflow pipelines for practical product use."
+    description:
+      "Assistant-style interfaces and typed AI workflow pipelines for practical product use.",
   },
   {
     title: "Web Automation",
     icon: Workflow,
-    description: "Automated operations with event-driven integrations and deployment-friendly scripts."
+    description:
+      "Automated operations with event-driven integrations and deployment-friendly scripts.",
   },
   {
     title: "Experimental UI Systems",
     icon: Gauge,
-    description: "Fast visual systems focused on motion, readability, and interaction clarity."
-  }
+    description:
+      "Fast visual systems focused on motion, readability, and interaction clarity.",
+  },
 ];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 export function CurrentlyBuilding() {
   return (
-    <section className="mt-16">
+    <section className="mt-20">
       <SectionHeading
         eyebrow="R&D"
         title="Currently Building"
         description="Active tracks in the lab, where prototypes become production systems."
       />
-      <div className="grid gap-4 md:grid-cols-3">
+      <motion.div
+        className="grid gap-4 md:grid-cols-3"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-60px" }}
+        variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: 0.1 } },
+        }}
+      >
         {items.map(({ title, icon: Icon, description }) => (
-          <article
+          <motion.article
             key={title}
-            className="rounded-2xl border border-white/10 bg-surface/85 p-6 transition hover:border-accent/40 hover:shadow-[0_0_0_1px_rgba(34,197,94,0.25),0_0_26px_rgba(34,197,94,0.18)]"
+            variants={cardVariants}
+            className="group rounded-2xl border border-white/[0.08] bg-surface/85 p-6 transition-all duration-300 hover:border-accent/30 hover:shadow-glow-accent"
+            whileHover={{ y: -3 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <Icon className="h-5 w-5 text-accent" />
+            <div className="inline-flex rounded-lg border border-accent/20 bg-accent/[0.08] p-2.5 text-accent transition-all duration-300 group-hover:shadow-[0_0_12px_rgba(34,197,94,0.2)]">
+              <Icon className="h-5 w-5" />
+            </div>
             <h3 className="mt-4 font-display text-xl text-white">{title}</h3>
-            <p className="mt-2 text-sm text-white/75">{description}</p>
-          </article>
+            <p className="mt-2 text-sm text-white/60">{description}</p>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

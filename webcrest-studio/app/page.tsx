@@ -7,7 +7,7 @@ import { TechStackGrid } from "@/components/TechStackGrid";
 
 export default function HomePage() {
   return (
-    <div className="space-y-3">
+    <div className="space-y-6">
       <Hero />
       <Reveal>
         <StatusPanel />
