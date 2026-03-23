@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { FlaskConical, Orbit, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Orbit } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
@@ -53,8 +54,14 @@ export function Navbar() {
         <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-8">
           {/* Logo */}
           <Link href="/" className="group inline-flex items-center gap-3">
-            <div className="rounded-xl border border-primary/40 bg-surface p-2 shadow-glow transition-shadow duration-300 group-hover:shadow-glow-lg">
-              <FlaskConical className="h-5 w-5 text-primary" />
+            <div className="overflow-hidden rounded-xl border border-primary/40 bg-surface shadow-glow transition-shadow duration-300 group-hover:shadow-glow-lg">
+              <Image
+                src="/android-chrome-192x192.png"
+                alt="WEB CREST LAB Logo"
+                width={32}
+                height={32}
+                className="h-8 w-8 object-cover"
+              />
             </div>
             <div>
               <p className="font-display text-sm tracking-[0.3em] text-primary">
