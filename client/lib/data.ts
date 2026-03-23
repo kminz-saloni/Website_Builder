@@ -89,7 +89,7 @@ export const projects: ProjectCaseStudy[] = [
     shortDescription: "Patient management and booking system for UK dental clinics.",
     goal: "Centralize practice management for 30+ locations while simplifying patient bookings.",
     stack: ["Next.js", "Tailwind CSS", "Booking Engine", "Zod"],
-    status: "In Progress",
+    status: "Completed",
     overview:
       "A comprehensive digital platform for one of the UK's leading groups of high-quality dental practices.",
     problem:
