@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Reveal } from "@/components/Reveal";
 import { StatusPanel } from "@/components/StatusPanel";
 import { TechStackGrid } from "@/components/TechStackGrid";
+import { BlogPreview } from "@/components/BlogPreview";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,9 @@ export default function HomePage() {
       </Reveal>
       <Reveal>
         <TechStackGrid />
+      </Reveal>
+      <Reveal>
+        <BlogPreview />
       </Reveal>
       <Reveal>
         <CurrentlyBuilding />

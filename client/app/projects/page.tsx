@@ -5,9 +5,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { projects } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Web Development Projects & Case Studies",
   description:
-    "Production projects documented as engineering case studies from WEB CREST LAB.",
+    "Explore our portfolio of professional website development and engineering projects, including enterprise apps, e-commerce solutions, and digital platforms.",
 };
 
 export default function ProjectsPage() {

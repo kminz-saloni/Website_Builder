@@ -11,12 +11,12 @@ export const projects: ProjectCaseStudy[] = [
   {
     id: "001",
     title: "Brother's Balloon Decoration",
-    shortDescription: "Premium balloon decor service booking platform for events and parties.",
+    shortDescription: "Professional custom website development for a premium balloon decor service.",
     goal: "Professionalize digital presence and capture high-intent local leads in Jaipur.",
     stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
     status: "Completed",
     overview:
-      "A brand-forward service site for a balloon decor company with strong local SEO and mobile-first booking flows.",
+      "An optimized custom website development project for a balloon decor company featuring strong local SEO and mobile-first booking flows.",
     problem:
       "The business relied on social DMs and had no structured funnel, causing slow response times and lost bookings.",
     solution:

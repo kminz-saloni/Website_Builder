@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { BackgroundGrid } from "@/components/BackgroundGrid";
 import { Navbar } from "@/components/Navbar";
 import { SiteFooter } from "@/components/SiteFooter";
+import { StructuredData } from "@/components/StructuredData";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,18 +27,20 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://webcrest.studio"),
   title: {
-    default: "WEB CREST LAB | Web Engineering Lab",
+    default: "Professional Website Development & Engineering Lab | WEB CREST LAB",
     template: "%s | WEB CREST LAB"
   },
   description:
-    "A digital engineering laboratory where production-grade web projects and experimental interfaces are engineered.",
+    "Expert website development, custom web engineering, and high-performance UI/UX design. We build production-grade web products and experimental digital interfaces using Next.js and TypeScript.",
   keywords: [
+    "website development",
+    "custom web design",
     "web engineering",
-    "developer portfolio",
-    "next.js",
-    "typescript",
-    "framer motion",
-    "digital laboratory"
+    "next.js developer",
+    "professional web app development",
+    "full-stack engineering lab",
+    "high-performance websites",
+    "digital product studio"
   ],
   icons: {
     icon: "/favicon.ico",
@@ -45,18 +48,18 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "WEB CREST LAB",
+    title: "WEB CREST LAB | Professional Web Development",
     description:
-      "I build fast, scalable, and experimental web products in a high-tech engineering lab format.",
+      "I build fast, scalable, and professional web products. Expert web engineering and experimental interface design.",
     url: "https://webcrest.studio",
     siteName: "WEB CREST LAB",
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "WEB CREST LAB",
+    title: "WEB CREST LAB | Website Development Lab",
     description:
-      "I build fast, scalable, and experimental web products in a high-tech engineering lab format."
+      "High-performance website development and digital product engineering."
   }
 };
 
@@ -71,6 +74,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} bg-bg text-text antialiased`}
       >
+        <StructuredData />
         <BackgroundGrid />
         <div className="relative z-10 min-h-screen">
           <Navbar />

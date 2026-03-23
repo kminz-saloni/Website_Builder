@@ -11,6 +11,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 const links = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
   { href: "/experiments", label: "Experiments" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

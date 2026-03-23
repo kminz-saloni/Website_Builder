@@ -51,10 +51,10 @@ export function Hero() {
           variants={fadeUp}
           className="font-display text-5xl leading-[1.1] md:text-7xl lg:text-8xl"
         >
-          <span className="text-white">Web </span>
-          <span className="gradient-text">Engineering</span>
-          <br />
-          <span className="text-white">Lab</span>
+          <span className="text-white">Website </span>
+          <span className="gradient-text">Development</span>
+          <br className="hidden md:block" />
+          <span className="text-white"> & Engineering Lab</span>
         </motion.h1>
 
         {/* Subtitle */}
