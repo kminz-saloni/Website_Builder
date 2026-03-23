@@ -1,4 +1,4 @@
-# WEB CREST LAB
+# WEB CREST LAB - Client
 
 Production-ready developer portfolio built as a digital engineering laboratory.
 
@@ -31,7 +31,7 @@ npm run start
 ## Deploy To Vercel
 
 1. Push this repo to GitHub.
-2. Import project in Vercel and select `webcrest-studio/` as the root directory.
+2. Import project in Vercel and select `client/` as the root directory.
 3. Framework preset: Next.js.
 4. Build command: `npm run build`.
 5. Output: default Next.js output.
